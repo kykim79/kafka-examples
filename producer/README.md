@@ -83,6 +83,26 @@ Then run **bin/runKryoConsumer.sh** script to print the published messages.
 #. /bin/runKryoConsumer.sh --bootstrap.servers localhost:9092 --topic my-topic
 # ./bin/runKryoConsumer.sh --bootstrap.servers localhost:9092 --topic my-event-topic
 ```
+
+##### AvroFlumeEvent Serializer
+This examples shows serailization using [AvroFlumeEvent](https://flume.apache.org/releases/content/1.1.0-incubating/apidocs/org/apache/flume/source/avro/AvroFlumeEvent.html)
+
+**Example Classes:** AvroFlumeProducerExample.java, AvroFlumeConsumerExample.java
+
+Use **bin/runAvroFlumeProducer.sh** script to produce AvroFlumeEvent messages 
+ 
+To produce 100 AvroFlumeEvent messages
+
+```shell
+# ./bin/runAvroFlumeProducer.sh --bootstrap.servers localhost:9092 --topic my-event-topic  --messages 100 --delay 1000 
+```
+
+Use **bin/runAvroFlumeConsumer.sh** script to consume AvroFlumeEvent messages.
+
+```shell
+#. /bin/runAvroFlumeConsumer.sh --bootstrap.servers localhost:9092 --topic my-topic
+```
+
 #### Custom Partitioning: 
 
 By default kafka producer uses DefaultPartitioner to distribute the records to available partitions.
