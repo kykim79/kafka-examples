@@ -18,6 +18,7 @@
 package kafka.examples.common.serialization;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Map;
 
 import org.apache.commons.lang3.SerializationUtils;
@@ -32,6 +33,8 @@ public class CustomDeserializer<T extends Serializable> implements Deserializer<
 	@SuppressWarnings("unchecked")
 	@Override
 	public T deserialize(String topic, byte[] objectData) {
+
+		System.out.println(String.format("%s, %s", topic, Arrays.toString(objectData) ));
 		return (objectData == null) ? null : (T) SerializationUtils.deserialize(objectData);
 	}
 

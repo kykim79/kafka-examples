@@ -101,7 +101,7 @@ Use **bin/runAvroFlumeConsumer.sh** script to consume AvroFlumeEvent messages.
 
 ```shell
 #. /bin/runAvroFlumeConsumer.sh --bootstrap.servers localhost:9092 --topic my-topic
-```
+
 
 #### Custom Partitioning: 
 

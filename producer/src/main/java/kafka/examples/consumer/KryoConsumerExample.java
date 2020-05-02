@@ -49,7 +49,8 @@ public class KryoConsumerExample {
             Properties consumerConfig = new Properties();
             consumerConfig.put("group.id", "my-group");
             consumerConfig.put("bootstrap.servers", brokerList);
-            consumerConfig.put("auto.offset.reset", "earliest");
+            //consumerConfig.put("auto.offset.reset", "earliest");
+            consumerConfig.put("auto.offset.reset", "latest");
             consumerConfig.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "kafka.examples.kryo.serde.KryoDeserializer");
             consumerConfig.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "kafka.examples.kryo.serde.KryoDeserializer");
 
